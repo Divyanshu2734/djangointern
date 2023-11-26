@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block sign %}
+<div class="container  p-6">
+  <div class="row">
+    <div class="col-md-4"></div>
+   
+    <div class="col-md-4">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 class="text-white bg-dark text-center p-3">Signin here</h3>
+     
+      <div class="card">
+        {% include "msg.html" %}
+        <form class="form-group" method="post" action="/login/">{%csrf_token%}
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label "><i class="fa-solid fa-envelope"></i>Email
+              address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"><i class="fa-solid fa-key"></i>Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"><i class="fa-solid men"></i>user type</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="user_type" placeholder="Doctor/Patient">
+          </div>
+         
+          
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary bg-dark" type="submit">Signin</button>
+
+          </div>
+        </form>
+      <div>New user?<a href="/signup">Signup</a></div>
+      </div>
+
+
+
+
+
+    </div>
+    <div class="col-md-4"></div>
+{% endblock sign %}
